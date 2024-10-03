@@ -3,3 +3,8 @@ project(MYENGINE)
 add_executable(game
  src/game/main.cpp
 )
+add_library(myengine
+    src/myengine/Core.h 
+        src/myengine/Core.cpp 
+)
+target_link_libraries(game myengine)
