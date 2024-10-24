@@ -1,6 +1,7 @@
 #include <iostream>
 #include <myengine/myengine.h>
-using namespace myengine;
+
+using namespace zengine;
 
 struct Player : Component
 {

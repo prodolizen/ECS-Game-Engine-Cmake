@@ -1,7 +1,8 @@
 #include <memory>
 #include <vector>
+#include <SDL2/SDL.h>
 
-namespace myengine
+namespace zengine
 {
 	struct Entity;
 
@@ -15,6 +16,6 @@ namespace myengine
 		std::vector<std::shared_ptr<Entity> > m_entities;
 		bool m_running;
 		std::weak_ptr<Core> m_self;
-		//SDL_Window* m_nativeWindow;
+		SDL_Window* m_nativeWindow;
 	};
 }

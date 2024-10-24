@@ -1,13 +1,16 @@
 #include "Core.h"
 #include "Entity.h"
 #include <iostream>
-namespace myengine
+#include <SDL2/SDL.h>
+#include <GL/glew.h>
+
+namespace zengine
 {
 	std::shared_ptr<Core> Core::initialize()
 	{
 		std::shared_ptr<Core> rtn = std::make_shared<Core>();
 		rtn->m_self = rtn;
-		//rtn->m_nativeWindow = SDL_CreateWindow(...);
+		rtn->m_nativeWindow = SDL_CreateWindow("nativeWindow", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 		return rtn;
 	}
 

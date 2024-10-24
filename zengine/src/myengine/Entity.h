@@ -1,6 +1,6 @@
 #include <vector>
 #include <memory>
-namespace myengine
+namespace zengine
 {
 	struct Core;
 	struct Component;
@@ -23,7 +23,7 @@ namespace myengine
 
 	private:
 
-		friend struct myengine::Core; //allows private access
+		friend struct zengine::Core; //allows private access
 
 		void tick();
 		void display();

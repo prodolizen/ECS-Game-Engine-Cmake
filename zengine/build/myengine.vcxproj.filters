@@ -1,39 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\olive\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\Core.cpp">
+    <ClCompile Include="C:\Users\s5403579\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\Core.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\olive\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\Entity.cpp">
+    <ClCompile Include="C:\Users\s5403579\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\olive\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\Component.cpp">
+    <ClCompile Include="C:\Users\s5403579\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\Component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\s5403579\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\TriangleRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\olive\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\Core.h">
+    <ClInclude Include="C:\Users\s5403579\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\Core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\olive\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\myengine.h">
+    <ClInclude Include="C:\Users\s5403579\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\myengine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\olive\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\Entity.h">
+    <ClInclude Include="C:\Users\s5403579\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\olive\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\Component.h">
+    <ClInclude Include="C:\Users\s5403579\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\Component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\s5403579\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\TriangleRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\olive\Documents\GitHub\GameEngineProgramming\zengine\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\s5403579\Documents\GitHub\GameEngineProgramming\zengine\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{4AB7B49C-520C-3F1C-870A-90284E2A010C}</UniqueIdentifier>
+      <UniqueIdentifier>{F4EFA25F-2217-3777-A282-29F7E9875147}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{76B7D5F1-C11F-3A9B-81FB-5B0A508C4DEB}</UniqueIdentifier>
+      <UniqueIdentifier>{6C6E8C89-3361-3F8D-847B-1F2F07A77BC5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

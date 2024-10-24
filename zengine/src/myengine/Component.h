@@ -1,13 +1,13 @@
 #include <memory>
 
-namespace myengine
+namespace zengine
 {
 	struct Entity;
 
 	struct Component
 	{
 	private:
-		friend struct myengine::Entity;
+		friend struct zengine::Entity;
 		virtual void onTick();
 		//virtual void onDisplay();
 		virtual void onInitialise();

@@ -3,6 +3,11 @@ project(MYENGINE)
 
 include_directories(
   src
+  contrib/include
+)
+
+link_directories(
+  contrib/lib
 )
 
 add_library(myengine
@@ -13,6 +18,12 @@ add_library(myengine
 	src/myengine/Entity.cpp
 	src/myengine/Component.h
 	src/myengine/Component.cpp  
+	src/myengine/TriangleRenderer.h
+	src/myengine/TriangleRenderer.cpp
+)
+
+target_link_libraries(
+myengine SDL2 GLEW32 OpenGL32
 )
 
 add_executable(game

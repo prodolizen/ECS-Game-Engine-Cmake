@@ -1,6 +1,6 @@
 #include "Component.h"
 
-namespace myengine
+namespace zengine
 {
 	void Component::onTick(){}
 	void Component::onInitialise() {}

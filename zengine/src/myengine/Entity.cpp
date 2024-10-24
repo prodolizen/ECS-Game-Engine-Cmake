@@ -1,7 +1,7 @@
 #include "Entity.h"
 #include "Component.h"
 
-namespace myengine
+namespace zengine
 {
 	void Entity::tick()
 	{
