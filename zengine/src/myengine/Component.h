@@ -1,9 +1,19 @@
-#include <iostream>
-struct Component
+#include <memory>
+
+namespace myengine
 {
-private:
-	virtual void onTick();
-	virtual void onDisplay();
-	void tick();
-	void display();
-};
+	struct Entity;
+
+	struct Component
+	{
+	private:
+		friend struct myengine::Entity;
+		virtual void onTick();
+		//virtual void onDisplay();
+		virtual void onInitialise();
+		std::weak_ptr<Entity> m_entity;
+		void tick();
+		void kill();
+		//void display();
+	};
+}

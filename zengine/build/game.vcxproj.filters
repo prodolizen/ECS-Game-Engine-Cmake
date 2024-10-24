@@ -4,11 +4,22 @@
     <ClCompile Include="C:\Users\olive\Documents\GitHub\GameEngineProgramming\zengine\src\game\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\olive\Documents\GitHub\GameEngineProgramming\zengine\src\game\Employee.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\olive\Documents\GitHub\GameEngineProgramming\zengine\src\game\Employee.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\olive\Documents\GitHub\GameEngineProgramming\zengine\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{4AB7B49C-520C-3F1C-870A-90284E2A010C}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{76B7D5F1-C11F-3A9B-81FB-5B0A508C4DEB}</UniqueIdentifier>
     </Filter>

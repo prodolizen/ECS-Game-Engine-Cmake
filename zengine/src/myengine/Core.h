@@ -1,5 +1,6 @@
-#include <iostream>
-#include "Entity.h"
+#include <memory>
+#include <vector>
+
 namespace myengine
 {
 	struct Entity;
@@ -11,9 +12,9 @@ namespace myengine
 		void start();
 		void stop();
 	private:
-		int dummy;
-		std::vector <std::shared_ptr<Entity> m_entities;
+		std::vector<std::shared_ptr<Entity> > m_entities;
 		bool m_running;
 		std::weak_ptr<Core> m_self;
-		SDL_Window* m_nativeWindow;
+		//SDL_Window* m_nativeWindow;
 	};
+}
