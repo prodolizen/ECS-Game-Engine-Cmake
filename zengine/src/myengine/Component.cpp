@@ -3,11 +3,18 @@
 namespace zengine
 {
 	void Component::onTick(){}
-	void Component::onInitialise() {}
+	void Component::onInitialize() {}
+	void Component::onDisplay() {}
 
 	void Component::tick()
 	{
 		onTick();
 	}
+
+	void Component::display ()
+	{
+		onDisplay();
+	}
+
 	void Component::kill() {}
 }

@@ -47,13 +47,13 @@ Shader::Shader(std::string vertPath, std::string fragPath)
 
 
 
-void render(Mesh* _mesh)
+void Shader::render(Mesh* _mesh)
 {
 
+	glBindVertexArray(_mesh->getId());
+	glUseProgram(id());
 
-
-
-
+	glDrawArrays(GL_TRIANGLES, 0, _mesh->getVerts());
 }
 
 
@@ -180,7 +180,7 @@ GLuint Shader::id()
 
 		// Ensure the VAO "position" attribute stream gets set as the first position
 		// during the link.
-		glBindAttribLocation(m_id, 0, "in_Position");
+		glBindAttribLocation(m_id, 0, "a_Position");
 		glBindAttribLocation(m_id, 1, "a_TexCoord");
 		glBindAttribLocation(m_id, 2, "a_Normal");
 

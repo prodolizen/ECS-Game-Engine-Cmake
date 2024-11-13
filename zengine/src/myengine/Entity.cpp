@@ -10,7 +10,14 @@ namespace zengine
 			m_components.at(ci)->tick();
 		}
 	}
-	// display is almost identical
+
+	void Entity::display()
+	{
+		for (size_t ci = 0; ci < m_components.size(); ++ci)
+		{
+			m_components.at(ci)->display();
+		}
+	}
 
 	void Entity::kill()
 	{

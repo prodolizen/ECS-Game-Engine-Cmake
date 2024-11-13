@@ -6,10 +6,11 @@ namespace zengine
 {
 	struct TriangleRenderer : Component
 	{
-	private:
-		void onInitialise();
-		void onRender();
+		TriangleRenderer();
+		void onInitialize();
 
+	private:		
+		void onDisplay();
 		Shader m_shader;
 		Mesh m_mesh;
 	};

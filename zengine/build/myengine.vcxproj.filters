@@ -13,6 +13,12 @@
     <ClCompile Include="C:\Users\s5403579\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\TriangleRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\s5403579\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\s5403579\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\s5403579\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\Core.h">
@@ -28,6 +34,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\s5403579\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\TriangleRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\s5403579\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\s5403579\Documents\GitHub\GameEngineProgramming\zengine\src\myengine\Mesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

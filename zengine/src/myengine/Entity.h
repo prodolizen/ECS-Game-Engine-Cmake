@@ -27,7 +27,7 @@ namespace zengine
 
 		void tick();
 		void display();
-		bool m_alive;
+		bool m_alive = true;
 		std::vector<std::shared_ptr<Component>> m_components;
 		std::weak_ptr<Core> m_core;
 		std::weak_ptr<Entity> m_self;

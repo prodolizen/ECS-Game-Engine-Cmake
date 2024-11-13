@@ -1,2 +1,1 @@
-﻿  main.cpp
-LINK : fatal error LNK1104: cannot open file 'Debug\myengine.lib'
+﻿  game.vcxproj -> C:\Users\s5403579\Documents\GitHub\GameEngineProgramming\zengine\build\Debug\game.exe

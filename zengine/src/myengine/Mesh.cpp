@@ -6,6 +6,7 @@ Mesh::Mesh(const std::string _path)
 	m_path = _path;
 	m_id = 0;
 	m_vertices = 0;
+	m_dirty = false;
 }
 
 GLuint Mesh::getId()

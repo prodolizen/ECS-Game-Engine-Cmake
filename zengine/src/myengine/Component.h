@@ -1,3 +1,5 @@
+#pragma once
+
 #include <memory>
 
 namespace zengine
@@ -9,11 +11,11 @@ namespace zengine
 	private:
 		friend struct zengine::Entity;
 		virtual void onTick();
-		//virtual void onDisplay();
-		virtual void onInitialise();
+		virtual void onDisplay();
+		virtual void onInitialize();
 		std::weak_ptr<Entity> m_entity;
 		void tick();
 		void kill();
-		//void display();
+		void display();
 	};
 }
