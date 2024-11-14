@@ -21,12 +21,20 @@ add_library(myengine
 	src/myengine/Component.h
 	src/myengine/Component.cpp  
 	src/myengine/TriangleRenderer.h
-	src/myengine/TriangleRenderer.cpp
-	src/myengine/Shader.h
-	src/myengine/Shader.cpp
-	src/myengine/Mesh.h	
-	src/myengine/Mesh.cpp
+	src/myengine/TriangleRenderer.cpp	
+	src/myengine/Resource.h
+	src/myengine/Resource.cpp
+	src/myengine/Texture.h
+	src/myengine/Texture.cpp
 )
+
+add_library(zenderer
+	src/zenderer/Shader.h
+	src/zenderer/Shader.cpp
+	src/zenderer/Mesh.h	
+	src/zenderer/Mesh.cpp
+)
+	
 
 target_link_libraries(
 myengine SDL2 GLEW32 OpenGL32
