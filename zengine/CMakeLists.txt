@@ -38,6 +38,10 @@ add_library(myengine
   src/myengine/Resource.cpp
   src/myengine/Texture.h
   src/myengine/Texture.cpp
+  src/myengine/Audio.h
+  src/myengine/Audio.cpp
+  src/myengine/Model.h
+  src/myengine/Model.cpp
 )
 
 # Link zenderer to myengine

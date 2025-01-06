@@ -8,4 +8,4 @@ struct Resource
 private:
 	std::string m_path;
 	void load();
-};
+}; 
