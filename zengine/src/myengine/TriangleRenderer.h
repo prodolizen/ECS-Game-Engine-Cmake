@@ -1,6 +1,7 @@
 #include "Component.h"
-#include "Mesh.h"
-#include "Shader.h"
+#include <zenderer/Mesh.h>
+#include <zenderer/Shader.h>
+#include "Texture.h"
 
 namespace zengine
 {
@@ -11,8 +12,9 @@ namespace zengine
 
 	private:		
 		void onDisplay();
-		Shader m_shader;
-		Mesh m_mesh;
+		zenderer::Shader m_shader;
+		zenderer::Mesh m_mesh;
+		//Texture m_texture;
 	};
 }
 
