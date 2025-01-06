@@ -1,10 +1,13 @@
 #include "Resource.h"
 
-std::string Resource::getPath() const
+namespace zengine
 {
-	return std::string();
-}
+	std::string Resource::getPath() const
+	{
+		return std::string();
+	}
 
-void Resource::load()
-{
+	void Resource::load()
+	{
+	}
 }

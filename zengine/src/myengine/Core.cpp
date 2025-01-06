@@ -2,7 +2,7 @@
 #include "Entity.h"
 #include <iostream>
 #include <SDL2/SDL.h>
-#include <GL/glew.h>
+#include <rend/rend.h>
 
 namespace zengine
 {
