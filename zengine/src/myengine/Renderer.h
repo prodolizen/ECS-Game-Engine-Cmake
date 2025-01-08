@@ -1,10 +1,6 @@
 #include "Component.h"
 #include <rend/rend.h>
 #include <memory>
-#include "Entity.h"
-#include "Texture.h"
-#include "Model.h"
-#include "Resources.h"
 
 namespace zengine
 {

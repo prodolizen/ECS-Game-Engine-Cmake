@@ -1,3 +1,4 @@
+
 namespace zengine {
 
 	//week 5 lab
@@ -23,5 +24,8 @@ namespace zengine {
 			m_resources.push_back(rtn);
 			return rtn;
 		}
+
+	private:
+		std::vector<std::shared_ptr<Resource>> m_resources;
 	};
 }

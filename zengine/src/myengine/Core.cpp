@@ -3,6 +3,7 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <rend/rend.h>
+#include "Resources.h"
 
 namespace zengine
 {
@@ -78,5 +79,9 @@ namespace zengine
 	void Core::stop()
 	{
 		m_running = false;
+	}
+	std::shared_ptr<Resources> Core::resourceRef() const
+	{
+		return m_resources;
 	}
 }

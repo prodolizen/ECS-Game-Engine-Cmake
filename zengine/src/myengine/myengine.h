@@ -8,3 +8,5 @@
 #include "Texture.h"
 #include "Model.h"
 #include "Renderer.h"
+#include "Resources.h"
+#include "Audio.h"

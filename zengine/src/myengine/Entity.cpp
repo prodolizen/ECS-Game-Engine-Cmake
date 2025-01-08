@@ -28,4 +28,9 @@ namespace zengine
 			m_components.at(ci)->kill();
 		}
 	}
+
+	std::shared_ptr<Core> Entity::core()
+	{
+		return m_core.lock();
+	}
 }

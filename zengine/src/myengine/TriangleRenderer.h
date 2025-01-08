@@ -1,7 +1,7 @@
 #include "Component.h"
 //#include <zenderer/Mesh.h>
 //#include <zenderer/Shader.h>
-#include "Texture.h"
+//#include "Texture.h"
 #include <memory>
 #include <rend/rend.h>
 

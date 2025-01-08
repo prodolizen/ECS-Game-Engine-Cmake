@@ -21,6 +21,8 @@ namespace zengine
 			return rtn;
 		}
 
+		std::shared_ptr<Core> core();
+
 	private:
 
 		friend struct zengine::Core; //allows private access

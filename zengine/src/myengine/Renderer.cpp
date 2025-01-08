@@ -1,4 +1,9 @@
 #include "Renderer.h"
+#include "Entity.h"
+#include "Texture.h"
+#include "Core.h"
+#include "Resources.h"
+#include "Model.h"
 
 namespace zengine
 {

@@ -1,4 +1,8 @@
 #include "TriangleRenderer.h"
+#include "Entity.h"
+#include "Texture.h"
+#include "Core.h"
+#include "Resources.h"
 
 namespace zengine
 {
