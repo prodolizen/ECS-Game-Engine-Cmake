@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION ${CMAKE_VERSION})
-project(MYENGINE)
+project(zengine)
 
 add_definitions(-DSDL_MAIN_HANDLED)
 
@@ -13,32 +13,32 @@ link_directories(
   contrib/lib
 )
 
-# myengine library
-add_library(myengine
-  src/myengine/Core.h 
-  src/myengine/Core.cpp
-  src/myengine/myengine.h
-  src/myengine/Entity.h
-  src/myengine/Entity.cpp
-  src/myengine/Component.h
-  src/myengine/Component.cpp  
-  src/myengine/TriangleRenderer.h
-  src/myengine/TriangleRenderer.cpp	
-  src/myengine/Resource.h
-  src/myengine/Resource.cpp
-  src/myengine/Texture.h
-  src/myengine/Texture.cpp
-  src/myengine/Audio.h
-  src/myengine/Audio.cpp
-  src/myengine/Model.h
-  src/myengine/Model.cpp
-  src/myengine/Renderer.h
-  src/myengine/Renderer.cpp
-  src/myengine/Resources.h
+# zengine library
+add_library(zengine
+  src/zengine/Core.h 
+  src/zengine/Core.cpp
+  src/zengine/myengine.h
+  src/zengine/Entity.h
+  src/zengine/Entity.cpp
+  src/zengine/Component.h
+  src/zengine/Component.cpp  
+  src/zengine/TriangleRenderer.h
+  src/zengine/TriangleRenderer.cpp	
+  src/zengine/Resource.h
+  src/zengine/Resource.cpp
+  src/zengine/Texture.h
+  src/zengine/Texture.cpp
+  src/zengine/Audio.h
+  src/zengine/Audio.cpp
+  src/zengine/Model.h
+  src/zengine/Model.cpp
+  src/zengine/Renderer.h
+  src/zengine/Renderer.cpp
+  src/zengine/Resources.h
 )
 
 target_link_libraries(
-	myengine rend
+	zengine rend
 )
 
 add_library(rend
@@ -65,4 +65,4 @@ add_executable(game
 )
 
 # Link libraries to the game
-target_link_libraries(game myengine)
+target_link_libraries(game zengine)
