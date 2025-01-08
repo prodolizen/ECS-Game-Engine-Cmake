@@ -7,18 +7,22 @@
 
 namespace zengine
 {
+	struct Texture;
+
 	struct TriangleRenderer : Component
 	{
 		//TriangleRenderer();
 		void onInitialize();
+		void onDisplay();
+		void setTexture(std::shared_ptr<Texture> texture);
 
 	private:		
-		void onDisplay();
 		//zenderer::Shader m_shader;
 		//zenderer::Mesh m_mesh;
 		std::shared_ptr<rend::Mesh> m_mesh;
 		std::shared_ptr<rend::Shader> m_shader;
 		//Texture m_texture;
+		std::shared_ptr<Texture> m_texture;
 	};
 }
 

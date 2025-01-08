@@ -4,10 +4,11 @@ namespace zengine
 {
 	std::string Resource::getPath() const
 	{
-		return std::string();
+		return m_path;
 	}
 
 	void Resource::load()
 	{
+		onLoad();
 	}
 }

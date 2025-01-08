@@ -12,7 +12,7 @@ namespace zengine
 		std::shared_ptr<Core> rtn = std::make_shared<Core>();
 		rtn->m_self = rtn;
 		rtn->m_nativeWindow = SDL_CreateWindow("nativeWindow", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
-
+		rtn->m_resources = std::make_shared<Resources>();
 		SDL_GL_CreateContext(rtn->m_nativeWindow);
 		glewInit();
 		return rtn;

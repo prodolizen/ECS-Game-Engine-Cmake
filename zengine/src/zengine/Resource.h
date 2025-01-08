@@ -1,7 +1,7 @@
 #pragma once
-#include <iostream>
 #include <rend/rend.h>
 #include <memory>
+#include <string>
 
 namespace zengine{	struct Resources;	struct Resource
 	{

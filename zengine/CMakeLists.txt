@@ -64,5 +64,8 @@ add_executable(game
   src/game/main.cpp
 )
 
+# Set startup project
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT game)
+
 # Link libraries to the game
 target_link_libraries(game zengine)

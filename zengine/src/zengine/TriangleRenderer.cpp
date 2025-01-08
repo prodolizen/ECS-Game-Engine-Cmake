@@ -16,6 +16,7 @@ namespace zengine
 	{
 		m_shader = std::make_shared<rend::Shader>(rend::TEXTURE_SHADER);
 		m_mesh = std::make_shared<rend::Mesh>(rend::TRIANGLE_MESH);
+		m_texture = entity()->core()->resourceRef()->load<Texture>("../assets/textures/Whiskers_diffuse.png");
 	}
 	void TriangleRenderer::onDisplay()
 	{
@@ -28,8 +29,14 @@ namespace zengine
 
 		m_shader->uniform("u_Projection", glm::perspective(glm::radians(45.0f), 1.0f, 0.1f, 100.0f));
 		m_shader->uniform("u_Model", glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, -10)));
+		m_shader->attribute("a_Position", *m_mesh->positions());
+		m_shader->attribute("a_TexCoord", *m_mesh->texcoords());
 		m_shader->render();
 
 		printf("Rendering\n");
+	}
+	void TriangleRenderer::setTexture(std::shared_ptr<Texture> texture)
+	{
+		m_texture = texture;
 	}
 }
