@@ -4,6 +4,7 @@ namespace zengine
 {
 	struct Core;
 	struct Component;
+	struct Transform;
 
 	struct Entity
 	{
@@ -21,6 +22,18 @@ namespace zengine
 			return rtn;
 		}
 
+		template <typename T>
+		std::shared_ptr<T> get_component()
+		{
+			for (size_t ci = 0; ci < m_components.size(); ++ci)
+			{
+				std::shared_ptr<T> rtn = std::dynamic_pointer_cast<T>(m_components.at(ci)); //expensive function (dpc)
+
+				if (rtn) return rtn;
+			}
+		}
+
+		std::shared_ptr<Transform> getTransform();
 		std::shared_ptr<Core> core();
 
 	private:
@@ -33,5 +46,6 @@ namespace zengine
 		std::vector<std::shared_ptr<Component>> m_components;
 		std::weak_ptr<Core> m_core;
 		std::weak_ptr<Entity> m_self;
+		std::weak_ptr<Transform> m_transform;
 	};
 }

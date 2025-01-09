@@ -67,6 +67,8 @@ void Texture::load(const sys::string& _path)
 
   if(!data)
   {
+      printf("rend path ");
+      printf(_path.unsafe_raw());
     throw Exception("Failed to load texture [" + _path + "]");
   }
 

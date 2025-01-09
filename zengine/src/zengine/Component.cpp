@@ -16,7 +16,7 @@ namespace zengine
 		onDisplay();
 	}
 
-	void Component::kill() {}
+	//void Component::kill() {}
 
 	std::shared_ptr<Entity> Component::entity()
 	{

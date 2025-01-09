@@ -14,10 +14,10 @@ namespace zengine
 		std::shared_ptr<Entity> addEntity();
 		void start();
 		void stop();
-		std::shared_ptr<Resources> resourceRef() const;
+		std::shared_ptr<Resources> getResources() const;
 	private:
 		std::vector<std::shared_ptr<Entity> > m_entities;
-		bool m_running;
+		bool m_running = false;
 		std::weak_ptr<Core> m_self;
 		SDL_Window* m_nativeWindow;
 		std::shared_ptr<Resources> m_resources;

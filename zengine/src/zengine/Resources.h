@@ -1,10 +1,12 @@
-#include <iostream>
+//#include <iostream>
+//#include <rend/rend.h>
 namespace zengine {
 
     struct Resource;
 
     struct Resources
     {
+        //lab 5
         template <typename T>
         std::shared_ptr<T> load(const std::string& _path)
         {
@@ -19,10 +21,10 @@ namespace zengine {
                 }
             }
            
-            std::cout << "Path: " << _path << " has loaded" << std::endl;
+          //  std::cout << "Loading resource: " << _path << std::endl;
             std::shared_ptr<T> rtn = std::make_shared<T>();
             rtn->m_path = _path;
-            rtn->load();
+			rtn->load();
             m_resources.push_back(rtn);
             return rtn;
         }

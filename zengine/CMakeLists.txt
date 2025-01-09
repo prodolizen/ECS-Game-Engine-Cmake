@@ -6,11 +6,11 @@ add_definitions(-DSDL_MAIN_HANDLED)
 include_directories(
   src
   contrib/include
-  src/zenderer
+  contrib/cl-windows-x86_64/include
 )
 
 link_directories(
-  contrib/lib
+  contrib/cl-windows-x86_64/lib
 )
 
 # zengine library
@@ -35,6 +35,8 @@ add_library(zengine
   src/zengine/Renderer.h
   src/zengine/Renderer.cpp
   src/zengine/Resources.h
+  src/zengine/Transform.h
+  src/zengine/Transform.cpp
 )
 
 target_link_libraries(
@@ -64,8 +66,9 @@ add_executable(game
   src/game/main.cpp
 )
 
+# Link libraries to the game
+target_link_libraries(game zengine)
+
 # Set startup project
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT game)
 
-# Link libraries to the game
-target_link_libraries(game zengine)

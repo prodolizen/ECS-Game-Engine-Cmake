@@ -19,6 +19,6 @@ namespace zengine
 		std::shared_ptr<rend::Mesh> m_mesh;
 		std::shared_ptr<Texture> m_texture;
 		std::shared_ptr<rend::Shader> m_shader;
-		std::shared_ptr<rend::ModelShader> m_modelShader;
+		std::shared_ptr<rend::ModelShader> m_mshader;
 	};
 }

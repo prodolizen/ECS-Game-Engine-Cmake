@@ -16,7 +16,7 @@ namespace zengine
 		virtual void onInitialize();
 		std::weak_ptr<Entity> m_entity;
 		void tick();
-		void kill();
+		//void kill();
 		void display();
 	};
 }
