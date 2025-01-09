@@ -1,58 +1,76 @@
 cmake_minimum_required(VERSION ${CMAKE_VERSION})
-project(MYENGINE)
+project(zengine)
 
 add_definitions(-DSDL_MAIN_HANDLED)
 
 include_directories(
   src
   contrib/include
-  src/zenderer
+  contrib/cl-windows-x86_64/include
 )
 
 link_directories(
-  contrib/lib
+  contrib/cl-windows-x86_64/lib
 )
 
-# zenderer library
-add_library(zenderer
-  src/zenderer/Shader.h
-  src/zenderer/Shader.cpp
-  src/zenderer/Mesh.h
-  src/zenderer/Mesh.cpp
+# zengine library
+add_library(zengine
+  src/zengine/Core.h 
+  src/zengine/Core.cpp
+  src/zengine/myengine.h
+  src/zengine/Entity.h
+  src/zengine/Entity.cpp
+  src/zengine/Component.h
+  src/zengine/Component.cpp  
+  src/zengine/TriangleRenderer.h
+  src/zengine/TriangleRenderer.cpp	
+  src/zengine/Resource.h
+  src/zengine/Resource.cpp
+  src/zengine/Texture.h
+  src/zengine/Texture.cpp
+  src/zengine/Audio.h
+  src/zengine/Audio.cpp
+  src/zengine/Model.h
+  src/zengine/Model.cpp
+  src/zengine/Renderer.h
+  src/zengine/Renderer.cpp
+  src/zengine/Resources.h
+  src/zengine/Transform.h
+  src/zengine/Transform.cpp
+  src/zengine/Input.h
+  src/zengine/Input.cpp
 )
 
-target_link_libraries(zenderer SDL2 GLEW32 OpenGL32)
-
-# myengine library
-add_library(myengine
-  src/myengine/Core.h 
-  src/myengine/Core.cpp
-  src/myengine/myengine.h
-  src/myengine/Entity.h
-  src/myengine/Entity.cpp
-  src/myengine/Component.h
-  src/myengine/Component.cpp  
-  src/myengine/TriangleRenderer.h
-  src/myengine/TriangleRenderer.cpp	
-  src/myengine/Resource.h
-  src/myengine/Resource.cpp
-  src/myengine/Texture.h
-  src/myengine/Texture.cpp
-  src/myengine/Audio.h
-  src/myengine/Audio.cpp
-  src/myengine/Model.h
-  src/myengine/Model.cpp
+target_link_libraries(
+	zengine rend
 )
 
-# Link zenderer to myengine
-target_link_libraries(myengine zenderer SDL2 GLEW32 OpenGL32)
+add_library(rend
+  src/rend/Animation.cpp
+  src/rend/Buffer.cpp
+  src/rend/Debug.cpp
+  src/rend/Font.cpp
+  src/rend/Mesh.cpp
+  src/rend/Model.cpp
+  src/rend/ModelShader.cpp
+  src/rend/RenderTexture.cpp
+  src/rend/Shader.cpp
+  src/rend/TextShader.cpp
+  src/rend/Texture.cpp
+  src/rend/rendmath.cpp
+  src/rend/utils.cpp
+)
+target_link_libraries(rend SDL2 GLEW32 OpenGL32 openal32)
+
 
 # Add game executable
 add_executable(game
   src/game/main.cpp
-  src/game/Employee.h
-  src/game/Employee.cpp
 )
 
 # Link libraries to the game
-target_link_libraries(game myengine zenderer)
+target_link_libraries(game zengine)
+
+# Set startup project
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT game)
+
