@@ -20,7 +20,7 @@ namespace zengine
 
 	void Renderer::onInitialize()
 	{
-		m_mshader = std::make_shared<rend::ModelShader>();
+		m_modelShader = std::make_shared<rend::ModelShader>();
 	}
 
 	void Renderer::onDisplay()
@@ -30,11 +30,11 @@ namespace zengine
 
 		glm::mat4 model(1.0f); //model matrix
 		model = entity()->getTransform()->model();
-		m_mshader->model(*m_model->m_model);
-		m_mshader->lighting(false);
-		m_mshader->projection(glm::perspective(45.0f, 1.0f, 0.1f, 100.0f));
-		m_mshader->model(model);
-		m_mshader->depth_test(true);
-		m_mshader->render();
+		m_modelShader->model(*m_model->m_model);
+		m_modelShader->lighting(false);
+		m_modelShader->projection(glm::perspective(45.0f, 1.0f, 0.1f, 100.0f));
+		m_modelShader->model(model);
+		m_modelShader->depth_test(true);
+		m_modelShader->render();
 	}
 }
