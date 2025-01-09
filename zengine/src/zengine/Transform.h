@@ -17,6 +17,8 @@ namespace zengine
 
 		glm::mat4 model();
 
+		void onInitialize();
+
 	private:
 		glm::vec3 m_position;
 		glm::vec3 m_rotation;

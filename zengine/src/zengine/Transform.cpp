@@ -46,4 +46,9 @@ namespace zengine
 		mod = glm::rotate(mod, m_rotation.x, glm::vec3(1.0f, 0.0f, 0.0f));
 		return mod;
 	}
+
+	void Transform::onInitialize()
+	{
+		m_scale = glm::vec3(1,1,1);
+	}
 }

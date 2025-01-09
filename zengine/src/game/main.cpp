@@ -38,7 +38,7 @@ int main()
 	//std::shared_ptr<TriangleRenderer> triangleRenderer = cat->addComponent<TriangleRenderer>();
 	//triangleRenderer->setTexture(core->getResources()->load<Texture>("../assets/curuthers/Whiskers_diffuse.png"));
 	renderer->setTexture(core->getResources()->load<Texture>("../assets/curuthers/Whiskers_diffuse.png"));
-	cat->getTransform()->setPosition(glm::vec3(0.5f, -1, -3));
+	cat->getTransform()->setPosition(glm::vec3(0.3, 0.3, 0.3));
 	//renderer->onInitialize();
 	
 	//entity->

@@ -61,7 +61,7 @@ namespace zengine
 			
 			}
 
-			glClearColor(0, 1, 0, 1);
+			glClearColor(0, 0, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 			for (size_t ei = 0; ei < m_entities.size(); ei++)
@@ -72,14 +72,14 @@ namespace zengine
 			// TODO: Create Windows class
 			SDL_GL_SwapWindow(m_nativeWindow);
 
-			for (size_t ei = 0; ei < m_entities.size(); ei++)
+			/*for (size_t ei = 0; ei < m_entities.size(); ei++)
 			{
 				if (!m_entities.at(ei)->m_alive)
 				{
 					m_entities.erase(m_entities.begin() + ei);
 					--ei;
 				}
-			}
+			}*/
 		}
 	}
 	void Core::stop()

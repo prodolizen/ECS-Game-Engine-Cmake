@@ -27,7 +27,7 @@ namespace zengine
 		{
 			for (size_t ci = 0; ci < m_components.size(); ++ci)
 			{
-				std::shared_ptr<T> rtn = std::dynamic_pointer_cast<T>(m_components.at(ci)); //expensive function (dpc)
+				std::shared_ptr<T> rtn = std::dynamic_pointer_cast<T>(m_components.at(ci));
 
 				if (rtn) return rtn;
 			}
