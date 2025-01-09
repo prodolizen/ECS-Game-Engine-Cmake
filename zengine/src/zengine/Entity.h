@@ -5,6 +5,7 @@ namespace zengine
 	struct Core;
 	struct Component;
 	struct Transform;
+	struct Input;
 
 	struct Entity
 	{
@@ -35,6 +36,7 @@ namespace zengine
 
 		std::shared_ptr<Transform> getTransform();
 		std::shared_ptr<Core> core();
+		std::shared_ptr<Input> getInput();
 
 	private:
 
@@ -47,5 +49,6 @@ namespace zengine
 		std::weak_ptr<Core> m_core;
 		std::weak_ptr<Entity> m_self;
 		std::weak_ptr<Transform> m_transform;
+		std::weak_ptr<Input> m_input;
 	};
 }

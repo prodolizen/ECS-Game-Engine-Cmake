@@ -5,6 +5,7 @@
 #include <rend/rend.h>
 #include "Resources.h"
 #include "Transform.h"
+#include "Input.h"
 
 namespace zengine
 {
@@ -25,6 +26,7 @@ namespace zengine
 		rtn->m_core = m_self;
 		rtn->m_self = rtn;
 		rtn->m_transform = rtn->addComponent<Transform>();
+		rtn->m_input = rtn->addComponent<Input>();
 		m_entities.push_back(rtn);
 		return rtn;
 	}
@@ -40,6 +42,10 @@ namespace zengine
 			// Remove "killed" entities
 		//}
 		m_running = true;
+
+		//give initial parameters to input so it knows where to start from 
+		m_entities[0]->getInput()->RecievePosition(m_entities[0]->getTransform()->getPosition());
+
 		while(m_running)
 		{
 			SDL_Event event = {};
@@ -49,10 +55,14 @@ namespace zengine
 				{
 					m_running = false;
 				}
+
+				glm::vec3 a = m_entities[0]->getInput()->Movement(event);
+
+				m_entities[0]->getTransform()->setPosition(a);
+				m_entities[0]->getTransform()->setRotation(20, glm::vec3(0, 0, 0));
 			}
 
-			m_entities[0]->getTransform()->setPosition(glm::vec3(0, 0, -10));
-			m_entities[0]->getTransform()->setRotation(20, glm::vec3(0, 0, 0));
+			
 
 			for (size_t ei = 0; ei < m_entities.size(); ei++)
 			{

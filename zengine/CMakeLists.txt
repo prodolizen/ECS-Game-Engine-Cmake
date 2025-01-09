@@ -37,6 +37,8 @@ add_library(zengine
   src/zengine/Resources.h
   src/zengine/Transform.h
   src/zengine/Transform.cpp
+  src/zengine/Input.h
+  src/zengine/Input.cpp
 )
 
 target_link_libraries(

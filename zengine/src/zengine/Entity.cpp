@@ -38,4 +38,9 @@ namespace zengine
 	{
 		return m_transform.lock();
 	}
+
+	std::shared_ptr<Input> Entity::getInput()
+	{
+		return m_input.lock();
+	}
 }
