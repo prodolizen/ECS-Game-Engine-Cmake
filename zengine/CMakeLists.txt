@@ -6,11 +6,10 @@ add_definitions(-DSDL_MAIN_HANDLED)
 include_directories(
   src
   contrib/include
-  contrib/cl-windows-x86_64/include
 )
 
 link_directories(
-  contrib/cl-windows-x86_64/lib
+  contrib/lib
 )
 
 # zengine library
