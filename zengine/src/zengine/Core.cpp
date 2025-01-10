@@ -6,6 +6,7 @@
 #include "Resources.h"
 #include "Transform.h"
 #include "Input.h"
+#include "Player.h"
 
 namespace zengine
 {
@@ -43,8 +44,19 @@ namespace zengine
 		//}
 		m_running = true;
 
+		int playerIndex = -1; //initialise to -1 to ensure a component not marked as player doesnt move 
+
+		for (size_t ei = 0; ei < m_entities.size(); ++ei)
+		{
+			if (m_entities[ei]->getComponent<Player>()) // Check if the entity has a Player component
+			{
+				playerIndex = ei;
+				break; // Stop searching once the player is found
+			}
+		}
+
 		//give initial parameters to input so it knows where to start from 
-		m_entities[0]->getInput()->RecievePosition(m_entities[0]->getTransform()->getPosition());
+		m_entities[playerIndex]->getInput()->RecievePosition(m_entities[playerIndex]->getTransform()->getPosition());
 
 		while(m_running)
 		{
@@ -56,10 +68,10 @@ namespace zengine
 					m_running = false;
 				}
 
-				glm::vec3 a = m_entities[0]->getInput()->Movement(event);
+				glm::vec3 a = m_entities[playerIndex]->getInput()->Movement(event);
 
-				m_entities[0]->getTransform()->setPosition(a);
-				m_entities[0]->getTransform()->setRotation(20, glm::vec3(0, 0, 0));
+				m_entities[playerIndex]->getTransform()->setPosition(a);
+				m_entities[playerIndex]->getTransform()->setRotation(20, glm::vec3(0, 0, 0));
 			}
 
 			

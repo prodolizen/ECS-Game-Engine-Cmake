@@ -6,6 +6,7 @@ namespace zengine
 	struct Component;
 	struct Transform;
 	struct Input;
+	struct Player;
 
 	struct Entity
 	{
@@ -24,14 +25,18 @@ namespace zengine
 		}
 
 		template <typename T>
-		std::shared_ptr<T> get_component()
+		std::shared_ptr<T> getComponent()
 		{
 			for (size_t ci = 0; ci < m_components.size(); ++ci)
 			{
 				std::shared_ptr<T> rtn = std::dynamic_pointer_cast<T>(m_components.at(ci));
 
-				if (rtn) return rtn;
+				if (rtn)
+				{
+					return rtn;
+				}
 			}
+			return nullptr; // Return nullptr if no matching component is found
 		}
 
 		std::shared_ptr<Transform> getTransform();

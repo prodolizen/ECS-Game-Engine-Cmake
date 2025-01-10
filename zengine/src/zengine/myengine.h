@@ -11,3 +11,4 @@
 #include "Audio.h"
 #include "Renderer.h"
 #include "TriangleRenderer.h"
+#include "Player.h"

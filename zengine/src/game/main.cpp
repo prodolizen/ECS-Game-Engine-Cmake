@@ -3,21 +3,6 @@
 
 using namespace zengine;
 
-struct Player : Component
-{
-	//int m_dummy;
-
-	void onInitialize() //virtual functions?? within component
-	{
-		//printf("Player::initialize\n");
-	}
-
-	void onTick()
-	{
-		//printf("Player::tick\n");
-	}
-};
-
 int main()
 {
 	//look at renderer initialise and display functions

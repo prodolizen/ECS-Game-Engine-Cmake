@@ -38,6 +38,8 @@ add_library(zengine
   src/zengine/Transform.cpp
   src/zengine/Input.h
   src/zengine/Input.cpp
+  src/zengine/Player.h
+  src/zengine/Player.cpp
 )
 
 target_link_libraries(
