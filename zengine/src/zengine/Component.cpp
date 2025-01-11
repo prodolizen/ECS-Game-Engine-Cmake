@@ -18,7 +18,7 @@ namespace zengine
 
 	//void Component::kill() {}
 
-	std::shared_ptr<Entity> Component::entity()
+	std::shared_ptr<Entity> Component::entity() const
 	{
 		return m_entity.lock();
 	}

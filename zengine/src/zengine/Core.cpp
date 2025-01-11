@@ -57,6 +57,8 @@ namespace zengine
 
 		//give initial parameters to input so it knows where to start from 
 		m_entities[playerIndex]->getInput()->RecievePosition(m_entities[playerIndex]->getTransform()->getPosition());
+		m_entities[playerIndex]->getInput()->RecieveRotation(m_entities[playerIndex]->getTransform()->getRotation());
+
 
 		while(m_running)
 		{
@@ -68,10 +70,11 @@ namespace zengine
 					m_running = false;
 				}
 
-				glm::vec3 a = m_entities[playerIndex]->getInput()->Movement(event);
+				glm::vec3 _pos = m_entities[playerIndex]->getInput()->Movement(event);
+				glm::vec3 _rot = m_entities[playerIndex]->getInput()->Rotation(event);
 
-				m_entities[playerIndex]->getTransform()->setPosition(a);
-				m_entities[playerIndex]->getTransform()->setRotation(20, glm::vec3(0, 0, 0));
+				m_entities[playerIndex]->getTransform()->setPosition(_pos);
+				m_entities[playerIndex]->getTransform()->setRotation(_rot);
 			}
 
 			
