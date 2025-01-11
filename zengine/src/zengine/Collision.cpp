@@ -26,6 +26,36 @@ namespace zengine
 				return false;
 			}
 		}
+
+		if (a.y > b.y)
+		{
+			if (b.y + bhs.y < a.y - ahs.y)
+			{
+				return false;
+			}
+		}
+		else
+		{
+			if (a.y + ahs.y < b.y - bhs.y)
+			{
+				return false;
+			}
+		}
+
+		if (a.z > b.z)
+		{
+			if (b.z + bhs.z < a.z - ahs.z)
+			{
+				return false;
+			}
+		}
+		else
+		{
+			if (a.z + ahs.z < b.z - bhs.z)
+			{
+				return false;
+			}
+		}
 		// TODO: y
 		// TODO: z
 
