@@ -18,7 +18,7 @@ namespace zengine
 		printf("shsahahdsjkahdjkasd");
 		m_shader = std::make_shared<rend::Shader>(rend::TEXTURE_SHADER);
 		m_mesh = std::make_shared<rend::Mesh>(rend::TRIANGLE_MESH);
-		m_texture = entity()->core()->getResources()->load<Texture>("../assets/triangle/triangleTexture.png");
+		m_texture = getEntity()->getCore()->getResources()->load<Texture>("../assets/triangle/triangleTexture.png");
 		//std::cout << "Loaded texture path: " << m_texture->getPath() << std::endl;
 	}
 	void TriangleRenderer::onDisplay()
@@ -31,7 +31,7 @@ namespace zengine
 		//m_shader.setUniform("u_Model", glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, -10)));
 		//m_shader.render(&m_mesh);
 		glm::mat4 model(1.0f);
-		model = entity()->getTransform()->model();
+		model = getEntity()->getTransform()->model();
 		m_shader->uniform("u_Projection", glm::perspective(glm::radians(45.0f), 1.0f, 0.1f, 100.0f));
 		m_shader->uniform("u_Model", model);
 		m_shader->uniform("u_Texture", *m_texture->m_texture);

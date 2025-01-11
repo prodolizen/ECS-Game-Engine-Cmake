@@ -29,7 +29,7 @@ namespace zengine
 			return;
 
 		glm::mat4 model(1.0f); //model matrix
-		model = entity()->getTransform()->model();
+		model = getEntity()->getTransform()->model();
 		m_modelShader->model(*m_model->m_model);
 		m_modelShader->lighting(false);
 		m_modelShader->projection(glm::perspective(45.0f, 1.0f, 0.1f, 100.0f));

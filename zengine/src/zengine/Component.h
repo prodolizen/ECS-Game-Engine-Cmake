@@ -8,7 +8,7 @@ namespace zengine
 
 	struct Component
 	{
-		std::shared_ptr<Entity> entity() const;
+		std::shared_ptr<Entity> getEntity() const;
 	private:
 		friend struct zengine::Entity;
 		virtual void onTick();

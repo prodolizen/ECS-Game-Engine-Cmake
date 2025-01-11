@@ -29,7 +29,7 @@ namespace zengine
 		}
 	}
 
-	std::shared_ptr<Core> Entity::core()
+	std::shared_ptr<Core> Entity::getCore()
 	{
 		return m_core.lock();
 	}

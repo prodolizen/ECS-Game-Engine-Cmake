@@ -6,8 +6,8 @@ namespace zengine
 {
 	bool BoxCollider::colliding(const BoxCollider& _other)
 	{
-		glm::vec3 a = entity()->getTransform()->getPosition();
-		glm::vec3 b = _other.entity()->getTransform()->getPosition();
+		glm::vec3 a = getEntity()->getTransform()->getPosition();
+		glm::vec3 b = _other.getEntity()->getTransform()->getPosition();
 		glm::vec3 ahs = m_size / 2.0f;
 		glm::vec3 bhs = _other.m_size / 2.0f;
 		if (a.x > b.x)

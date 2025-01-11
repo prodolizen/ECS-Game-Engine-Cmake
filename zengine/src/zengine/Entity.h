@@ -41,7 +41,7 @@ namespace zengine
 		}
 
 		std::shared_ptr<Transform> getTransform();
-		std::shared_ptr<Core> core();
+		std::shared_ptr<Core> getCore();
 		std::shared_ptr<Input> getInput();
 
 	private:
