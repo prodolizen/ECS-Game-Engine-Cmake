@@ -28,6 +28,7 @@ namespace zengine
 		rtn->m_self = rtn;
 		rtn->m_transform = rtn->addComponent<Transform>();
 		rtn->m_input = rtn->addComponent<Input>();
+		rtn->m_boxCollider = rtn->addComponent<BoxCollider>();
 		m_entities.push_back(rtn);
 		return rtn;
 	}
@@ -59,6 +60,8 @@ namespace zengine
 		m_entities[playerIndex]->getInput()->RecievePosition(m_entities[playerIndex]->getTransform()->getPosition());
 		m_entities[playerIndex]->getInput()->RecieveRotation(m_entities[playerIndex]->getTransform()->getRotation());
 
+		find<BoxCollider>(m_boxColliders);
+		std::cout << m_boxColliders.size() << std::endl;	
 
 		while(m_running)
 		{

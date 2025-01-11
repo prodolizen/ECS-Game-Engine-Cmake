@@ -7,6 +7,7 @@ namespace zengine
 	struct Transform;
 	struct Input;
 	struct Player;
+	struct BoxCollider;
 
 	struct Entity
 	{
@@ -55,5 +56,6 @@ namespace zengine
 		std::weak_ptr<Entity> m_self;
 		std::weak_ptr<Transform> m_transform;
 		std::weak_ptr<Input> m_input;
+		std::weak_ptr<BoxCollider> m_boxCollider;
 	};
 }
