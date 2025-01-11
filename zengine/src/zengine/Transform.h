@@ -1,4 +1,4 @@
-//#pragma once
+#pragma once
 #include <rend/rend.h>
 #include "Component.h"
 

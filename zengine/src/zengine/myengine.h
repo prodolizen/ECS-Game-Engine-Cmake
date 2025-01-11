@@ -12,3 +12,5 @@
 #include "Renderer.h"
 #include "TriangleRenderer.h"
 #include "Player.h"
+#include "Collision.h"
+#include "Input.h"

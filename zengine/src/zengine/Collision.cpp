@@ -1,6 +1,8 @@
-#include "BoxCollider.h"
+#include "Collision.h"
 #include "Transform.h"
 #include "Entity.h"
+#include "Core.h"
+#include <iostream>
 
 namespace zengine
 {
@@ -28,6 +30,27 @@ namespace zengine
 		// TODO: z
 
 		return true;
+	}
+
+	void BoxCollider::setSize(glm::vec3 _size)
+	{
+		m_size = _size;
+	}
+
+	void RigidBody::onTick()
+	{
+		getEntity()->getCore()->find<BoxCollider>(m_colliders);
+
+		for (int i = 0; i < m_colliders.size(); i++)
+		{
+			for (int j = i + 1; j < m_colliders.size(); j++)
+			{
+				if (m_colliders.at(i)->colliding(*m_colliders.at(j)))
+				{
+					std::cout << "Colliding" << std::endl;
+				}
+			}
+		}
 	}
 
 }

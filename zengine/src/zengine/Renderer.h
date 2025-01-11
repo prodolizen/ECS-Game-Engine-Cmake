@@ -1,3 +1,4 @@
+#pragma once
 #include "Component.h"
 #include <rend/rend.h>
 #include <memory>

@@ -1,3 +1,4 @@
+#pragma once
 #include "Component.h"
 //#include <zenderer/Mesh.h>
 //#include <zenderer/Shader.h>

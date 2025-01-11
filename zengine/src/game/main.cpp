@@ -16,6 +16,9 @@ int main()
 	//curuthers
 	std::shared_ptr<Entity> cat = core->addEntity();
 	cat->addComponent<Player>();
+	cat->addComponent<RigidBody>();
+	std::shared_ptr<BoxCollider> cbc = cat->addComponent<BoxCollider>();
+	cbc->setSize(glm::vec3(1, 1, 1));
 	std::shared_ptr<Renderer> renderer = cat->addComponent<Renderer>();
 	renderer->setModel(core->getResources()->load<Model>("../assets/curuthers/curuthers.obj"));
 	renderer->setTexture(core->getResources()->load<Texture>("../assets/curuthers/Whiskers_diffuse.png"));
@@ -24,6 +27,9 @@ int main()
 	//skull
 	std::shared_ptr<Entity> skull = core->addEntity();
 	std::shared_ptr<Renderer> renderer2 = skull->addComponent<Renderer>();
+	std::shared_ptr<BoxCollider> sbc = skull->addComponent<BoxCollider>();
+	sbc->setSize(glm::vec3(1, 1, 1));
+	skull->addComponent<RigidBody>();
 	renderer2->setModel(core->getResources()->load<Model>("../assets/skull/12140_Skull_v3_L2.obj"));
 	renderer2->setTexture(core->getResources()->load<Texture>("../assets/skull/Skull.jpg"));
 	skull->getTransform()->setPosition(glm::vec3(5, 0, -20));

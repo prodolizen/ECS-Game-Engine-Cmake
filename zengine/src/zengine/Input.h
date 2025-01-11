@@ -1,3 +1,4 @@
+#pragma once
 #include <rend/rend.h>
 #include <SDL2/SDL.h>
 #include "Component.h"

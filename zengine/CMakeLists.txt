@@ -40,8 +40,8 @@ add_library(zengine
   src/zengine/Input.cpp
   src/zengine/Player.h
   src/zengine/Player.cpp
-  src/zengine/BoxCollider.h
-  src/zengine/BoxCollider.cpp
+  src/zengine/Collision.h
+  src/zengine/Collision.cpp
 )
 
 target_link_libraries(
