@@ -77,7 +77,8 @@ namespace zengine
 			{
 				if (m_colliders.at(i)->colliding(*m_colliders.at(j)))
 				{
-					std::cout << "Colliding" << std::endl;
+					m_colliders.at(j)->getEntity()->kill();
+					m_colliders.erase(m_colliders.begin() + j);
 				}
 			}
 		}

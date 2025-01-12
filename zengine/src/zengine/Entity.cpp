@@ -25,7 +25,7 @@ namespace zengine
 		m_alive = false;
 		for (size_t ci = 0; ci < m_components.size(); ++ci)
 		{
-			//m_components.at(ci)->kill();
+			m_components.at(ci)->kill();
 		}
 	}
 

@@ -28,6 +28,7 @@ namespace zengine
 		rtn->m_self = rtn;
 		rtn->m_transform = rtn->addComponent<Transform>();
 		rtn->m_input = rtn->addComponent<Input>();
+		rtn->m_alive = true;
 		m_entities.push_back(rtn);
 		return rtn;
 	}
@@ -87,7 +88,7 @@ namespace zengine
 
 			glClearColor(0, 0, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+			std::cout << m_entities.size() << std::endl;
 			for (size_t ei = 0; ei < m_entities.size(); ei++)
 			{
 				m_entities.at(ei)->display();
@@ -96,14 +97,14 @@ namespace zengine
 			// TODO: Create Windows class
 			SDL_GL_SwapWindow(m_nativeWindow);
 
-			/*for (size_t ei = 0; ei < m_entities.size(); ei++)
+			for (size_t ei = 0; ei < m_entities.size(); ei++)
 			{
 				if (!m_entities.at(ei)->m_alive)
 				{
 					m_entities.erase(m_entities.begin() + ei);
 					--ei;
 				}
-			}*/
+			}
 		}
 	}
 	void Core::stop()
