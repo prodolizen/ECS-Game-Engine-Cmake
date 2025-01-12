@@ -23,6 +23,9 @@ int main()
 	renderer->setModel(core->getResources()->load<Model>("../assets/curuthers/curuthers.obj"));
 	renderer->setTexture(core->getResources()->load<Texture>("../assets/curuthers/Whiskers_diffuse.png"));
 	cat->getTransform()->setPosition(glm::vec3(0, -1, -20));
+	std::shared_ptr<Audio> catAudio = cat->addComponent<Audio>();
+	catAudio->playSound("../assets/sounds/upbeat.ogg", true); //looping game music
+
 
 	//skull
 	std::shared_ptr<Entity> skull = core->addEntity();

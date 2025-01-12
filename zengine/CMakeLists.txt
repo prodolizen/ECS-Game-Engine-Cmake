@@ -42,6 +42,7 @@ add_library(zengine
   src/zengine/Player.cpp
   src/zengine/Collision.h
   src/zengine/Collision.cpp
+  src/zengine/stb_vorbis.c
 )
 
 target_link_libraries(
