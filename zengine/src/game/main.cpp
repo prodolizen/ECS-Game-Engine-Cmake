@@ -38,6 +38,7 @@ int main()
 	skull->getTransform()->setPosition(glm::vec3(5, 0, -20));
 	skull->getTransform()->setScale(glm::vec3(0.1, 0.1, 0.1));
 	skull->getTransform()->setRotation(glm::vec3(5, 0, 0));
+	skull->addComponent<Audio>();
 	
 	
 	core->start();

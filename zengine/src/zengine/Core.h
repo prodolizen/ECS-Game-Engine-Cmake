@@ -4,6 +4,7 @@
 #include <string>
 #include <SDL2/SDL.h>
 #include "Collision.h"
+#include "Audio.h"
 
 namespace zengine
 {

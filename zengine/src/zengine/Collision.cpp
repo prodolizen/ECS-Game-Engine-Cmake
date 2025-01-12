@@ -77,6 +77,7 @@ namespace zengine
 			{
 				if (m_colliders.at(i)->colliding(*m_colliders.at(j)))
 				{
+					m_colliders.at(j)->getEntity()->getComponent<Audio>()->playSound("../assets/sounds/slash.ogg", false);
 					m_colliders.at(j)->getEntity()->kill();
 					m_colliders.erase(m_colliders.begin() + j);
 				}
