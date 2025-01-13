@@ -3,6 +3,9 @@
 #include "Entity.h"
 #include "Core.h"
 #include <iostream>
+#include "Player.h"
+#include <random>
+#include "Maths.h"
 
 namespace zengine
 {
@@ -67,6 +70,11 @@ namespace zengine
 		m_size = _size;
 	}
 
+	void BoxCollider::setOffset(glm::vec3 _offset)
+	{
+		m_offset = _offset;
+	}
+
 	void RigidBody::onTick()
 	{
 		getEntity()->getCore()->find<BoxCollider>(m_colliders);
@@ -77,9 +85,25 @@ namespace zengine
 			{
 				if (m_colliders.at(i)->colliding(*m_colliders.at(j)))
 				{
-					m_colliders.at(j)->getEntity()->getComponent<Audio>()->playSound("../assets/sounds/slash.ogg", false);
+					/*m_colliders.at(j)->getEntity()->getComponent<Audio>()->playSound("../assets/sounds/slash.ogg", false);
 					m_colliders.at(j)->getEntity()->kill();
-					m_colliders.erase(m_colliders.begin() + j);
+					m_colliders.erase(m_colliders.begin() + j);*/
+
+					if (m_colliders.at(i)->getEntity()->getComponent<Player>()) //if collider hitting j is the player
+					{
+						Maths maths;
+						float x = maths.getRandomFloat(-5, 5);
+						float y = 0;
+						float z = maths.getRandomFloat(-20, -10);
+
+						std::shared_ptr<Player> player = m_colliders.at(i)->getEntity()->getComponent<Player>();
+						player->increaseScore(1); //increase score by 1
+						m_colliders.at(j)->getEntity()->getComponent<Audio>()->playSound("../assets/sounds/slash.ogg", false);
+						m_colliders.at(j)->getEntity()->getTransform()->setPosition(glm::vec3(x,y,z));
+						
+					}
+
+
 				}
 			}
 		}

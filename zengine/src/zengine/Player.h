@@ -7,7 +7,10 @@ namespace zengine
 	{
 		void onInitialize();
 		void onTick();
+		int getScore();
+		void increaseScore(int _amount);
 
 	private:
+		int m_score;
 	};
 }

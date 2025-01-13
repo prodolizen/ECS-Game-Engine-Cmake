@@ -9,6 +9,7 @@ namespace zengine
 	{
 		bool colliding(const BoxCollider& _other);
 		void setSize(glm::vec3 _size);
+		void setOffset(glm::vec3 _offset);
 	private:
 		glm::vec3 m_size;
 		glm::vec3 m_offset;

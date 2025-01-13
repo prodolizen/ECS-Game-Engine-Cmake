@@ -40,7 +40,6 @@ int main()
 	skull->getTransform()->setRotation(glm::vec3(5, 0, 0));
 	skull->addComponent<Audio>();
 	
-	
 	core->start();
 
 	return 0;

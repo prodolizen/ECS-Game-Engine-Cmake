@@ -43,6 +43,8 @@ add_library(zengine
   src/zengine/Collision.h
   src/zengine/Collision.cpp
   src/zengine/stb_vorbis.c
+  src/zengine/Maths.h
+  src/zengine/Maths.cpp
 )
 
 target_link_libraries(
