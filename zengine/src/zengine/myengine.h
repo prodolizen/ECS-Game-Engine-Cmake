@@ -14,3 +14,5 @@
 #include "Player.h"
 #include "Collision.h"
 #include "Input.h"
+#include "Window.h"
+#include "GUI.h"

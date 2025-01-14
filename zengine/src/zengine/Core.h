@@ -5,6 +5,7 @@
 #include <SDL2/SDL.h>
 #include "Collision.h"
 #include "Audio.h"
+#include "Window.h"
 
 namespace zengine
 {
@@ -18,6 +19,7 @@ namespace zengine
 		void start();
 		void stop();
 		std::shared_ptr<Resources> getResources() const;
+		std::shared_ptr<Window> getWindow() const;
 
         template <typename T>
         void find(std::vector<std::shared_ptr<T>>& _out)
@@ -50,7 +52,8 @@ namespace zengine
 		std::vector<std::shared_ptr<Entity> > m_entities;
 		bool m_running = false;
 		std::weak_ptr<Core> m_self;
-		SDL_Window* m_nativeWindow;
+		//SDL_Window* m_nativeWindow;
+        std::shared_ptr<Window> m_window;
 		std::shared_ptr<Resources> m_resources;
 		std::vector<std::shared_ptr<BoxCollider>> m_boxColliders;
 	};

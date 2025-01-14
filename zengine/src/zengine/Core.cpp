@@ -13,11 +13,12 @@ namespace zengine
 	std::shared_ptr<Core> Core::initialize()
 	{
 		std::shared_ptr<Core> rtn = std::make_shared<Core>();
-		rtn->m_nativeWindow = SDL_CreateWindow("nativeWindow", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+		//rtn->m_nativeWindow = SDL_CreateWindow("nativeWindow", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+		rtn->m_window = std::make_shared<Window>("ZEngine Window", 800, 600);
 		rtn->m_resources = std::make_shared<Resources>();
 		rtn->m_self = rtn;
-		SDL_GL_CreateContext(rtn->m_nativeWindow);
-		glewInit();
+		//SDL_GL_CreateContext(rtn->m_nativeWindow);
+		//glewInit();
 		return rtn;
 	}
 
@@ -95,7 +96,8 @@ namespace zengine
 			}
 
 			// TODO: Create Windows class
-			SDL_GL_SwapWindow(m_nativeWindow);
+			//SDL_GL_SwapWindow(m_nativeWindow);
+			m_window->swapBuffers();
 
 			for (size_t ei = 0; ei < m_entities.size(); ei++)
 			{
@@ -114,5 +116,9 @@ namespace zengine
 	std::shared_ptr<Resources> Core::getResources() const
 	{
 		return m_resources;
+	}
+	std::shared_ptr<Window> Core::getWindow() const
+	{
+		return m_window;
 	}
 }

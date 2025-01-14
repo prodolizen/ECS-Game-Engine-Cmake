@@ -45,6 +45,10 @@ add_library(zengine
   src/zengine/stb_vorbis.c
   src/zengine/Maths.h
   src/zengine/Maths.cpp
+  src/zengine/GUI.h
+  src/zengine/GUI.cpp
+  src/zengine/Window.h
+  src/zengine/Window.cpp
 )
 
 target_link_libraries(

@@ -25,6 +25,7 @@ int main()
 	cat->getTransform()->setPosition(glm::vec3(0, -1, -20));
 	std::shared_ptr<Audio> catAudio = cat->addComponent<Audio>();
 	catAudio->playSound("../assets/sounds/upbeat.ogg", true); //looping game music
+	cat->addComponent<GUI>();
 
 
 	//skull
