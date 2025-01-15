@@ -1,27 +1,66 @@
 #include "GUI.h"
-#include "Core.h"
-#include "Entity.h"
-#include <stdexcept>
+#include <GL/glew.h>
+#include <iostream>
 
 namespace zengine
 {
-	void GUI::draw(glm::vec2 _size, glm::vec2 _pos)
-	{
-		SDL_Rect rect = { static_cast<int>(_pos.x), static_cast<int>(_pos.y), static_cast<int>(_size.x), static_cast<int>(_size.y) };
-		m_rects.push_back(rect); // Add to vector
+    void GUI::onInitialize()
+    {
+        // Initialize any required states or shaders for the GUI
+    }
 
-		SDL_SetRenderDrawColor(m_renderer, 255, 0, 0, 255);
-		SDL_RenderFillRect(m_renderer, &rect);
-		// Remove SDL_RenderPresent(m_renderer);
-	}
+    void GUI::onTick()
+    {
+        // Handle additional logic here, such as updating element states
+    }
 
-	void GUI::onInitialize()
-	{
-		auto core = getEntity()->getCore();
-		m_window = core->getWindow();
-		m_renderer = SDL_CreateRenderer(m_window->getSDLWindow(), -1, SDL_RENDERER_ACCELERATED);
+    void GUI::onDisplay()
+    {
+        glDisable(GL_DEPTH_TEST); // Disable depth testing for GUI rendering
+        glEnable(GL_BLEND);       // Enable blending for transparency
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-		if (!m_renderer)
-			throw std::runtime_error("failed to create sdl renderer");
-	}
+        for (const auto& element : elements)
+        {
+            renderElement(element);
+        }
+
+        glEnable(GL_DEPTH_TEST); // Re-enable depth testing after GUI rendering
+    }
+
+    void GUI::addElement(const GUIElement& element)
+    {
+        elements.push_back(element);
+    }
+
+    void GUI::updateElementStates(int mouseX, int mouseY, bool mousePressed)
+    {
+        for (auto& element : elements)
+        {
+            element.isHovered =
+                mouseX >= element.position.x && mouseX <= element.position.x + element.size.x &&
+                mouseY >= element.position.y && mouseY <= element.position.y + element.size.y;
+
+            if (element.isHovered && mousePressed)
+            {
+                element.isClicked = true;
+                std::cout << "Clicked on: " << element.label << std::endl;
+            }
+            else
+            {
+                element.isClicked = false;
+            }
+        }
+    }
+
+    void GUI::renderElement(const GUIElement& element)
+    {
+        glBegin(GL_QUADS);
+        glColor4f(element.color.r, element.color.g, element.color.b, element.color.a);
+        glVertex2f(element.position.x, element.position.y);
+        glVertex2f(element.position.x + element.size.x, element.position.y);
+        glVertex2f(element.position.x + element.size.x, element.position.y + element.size.y);
+        glVertex2f(element.position.x, element.position.y + element.size.y);
+        glEnd();
+    }
 }

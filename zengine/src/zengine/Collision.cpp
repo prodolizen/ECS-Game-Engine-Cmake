@@ -99,7 +99,13 @@ namespace zengine
 						std::shared_ptr<Player> player = m_colliders.at(i)->getEntity()->getComponent<Player>();
 						player->increaseScore(1); //increase score by 1
 						m_colliders.at(j)->getEntity()->getComponent<Audio>()->playSound("../assets/sounds/slash.ogg", false);
-						m_colliders.at(j)->getEntity()->getTransform()->setPosition(glm::vec3(x,y,z));
+						
+						if (player->getScore() == 9)
+							m_colliders.at(j)->getEntity()->kill();
+						else
+							m_colliders.at(j)->getEntity()->getTransform()->setPosition(glm::vec3(x, y, z));
+
+						std::cout << "Score: " << player->getScore() << std::endl;
 						
 					}
 
