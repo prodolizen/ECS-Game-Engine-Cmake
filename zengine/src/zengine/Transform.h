@@ -12,7 +12,6 @@ namespace zengine
 
 		void setPosition(glm::vec3 position);	
 		void setRotation(glm::vec3 rotation);
-		//void setRotation(float angle, glm::vec3 axis);
 		void setScale(glm::vec3 scale);
 
 		glm::mat4 model();

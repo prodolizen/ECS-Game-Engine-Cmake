@@ -97,33 +97,28 @@ namespace zengine
 
     glm::vec3 Input::Movement(const SDL_Event& evt)
     {
-        // Define global direction vectors (no dependence on m_rotation)
-        glm::vec3 forward(0.0f, 0.0f, -1.0f);  // Positive Z for forward
-        glm::vec3 backward(0.0f, 0.0f, 1.0f); // Negative Z for backward
-        glm::vec3 left(-1.0f, 0.0f, 0.0f);     // Negative X for left
-        glm::vec3 right(1.0f, 0.0f, 0.0f);     // Positive X for right
+        glm::vec3 forward(0.0f, 0.0f, -1.0f); 
+        glm::vec3 backward(0.0f, 0.0f, 1.0f);
+        glm::vec3 left(-1.0f, 0.0f, 0.0f);     
+        glm::vec3 right(1.0f, 0.0f, 0.0f);     
 
         if (evt.type == SDL_KEYDOWN)
         {
             switch (evt.key.keysym.sym)
             {
             case SDLK_w:
-                // Move forward (along the positive Z-axis)
                 m_position += forward * 0.05f;
                 break;
 
             case SDLK_s:
-                // Move backward (along the negative Z-axis)
                 m_position += backward * 0.05f;
                 break;
 
             case SDLK_a:
-                // Move left (along the negative X-axis)
                 m_position += left * 0.05f;
                 break;
 
             case SDLK_d:
-                // Move right (along the positive X-axis)
                 m_position += right * 0.05f;
                 break;
 
@@ -136,29 +131,24 @@ namespace zengine
 
     glm::vec3 Input::Rotation(const SDL_Event& evt)
     {
-        // Remove the mouse-based rotation logic since we are no longer rotating based on mouse.
+        // set rotation of model to direction of movement
         if (evt.type == SDL_KEYDOWN)
         {
-            // Set rotation based on the key pressed
             switch (evt.key.keysym.sym)
             {
             case SDLK_w:
-                // Look forward
                 m_rotation.y = 40.7999f;
                 break;
 
             case SDLK_a:
-                // Look left (90 degrees)
                 m_rotation.y = -90.0f;
                 break;
 
             case SDLK_s:
-                // Look backward (180 degrees)
                 m_rotation.y = 0.0f;
                 break;
 
             case SDLK_d:
-                // Look right (-90 degrees)
                 m_rotation.y = 90.0f;
                 break;
 
@@ -168,8 +158,6 @@ namespace zengine
 
             std::cout << m_rotation.y << std::endl;
         }
-
-        // Return the updated rotation value (no effect on movement, just for visualization or model orientation)
         return m_rotation;
     }
 

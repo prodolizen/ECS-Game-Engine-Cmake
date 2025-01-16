@@ -6,18 +6,18 @@ namespace zengine
 {
     void GUI::onInitialize()
     {
-        // Initialize any required states or shaders for the GUI
+        
     }
 
     void GUI::onTick()
     {
-        // Handle additional logic here, such as updating element states
+        
     }
 
     void GUI::onDisplay()
     {
-        glDisable(GL_DEPTH_TEST); // Disable depth testing for GUI rendering
-        glEnable(GL_BLEND);       // Enable blending for transparency
+        glDisable(GL_DEPTH_TEST); 
+		glEnable(GL_BLEND); //allows for a bit of transparency with the UI element
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
         for (const auto& element : elements)
@@ -25,7 +25,7 @@ namespace zengine
             renderElement(element);
         }
 
-        glEnable(GL_DEPTH_TEST); // Re-enable depth testing after GUI rendering
+        glEnable(GL_DEPTH_TEST); 
     }
 
     void GUI::addElement(const GUIElement& element)

@@ -73,7 +73,7 @@ namespace zengine
                     m_entities[playerIndex]->getTransform()->setRotation(rot);
                 }
 
-                // Handle GUI input
+                // GUI Inputs
                 for (const auto& entity : m_entities)
                 {
                     auto gui = entity->getComponent<GUI>();
