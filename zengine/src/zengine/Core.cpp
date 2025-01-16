@@ -72,16 +72,6 @@ namespace zengine
                     m_entities[playerIndex]->getTransform()->setPosition(pos);
                     m_entities[playerIndex]->getTransform()->setRotation(rot);
                 }
-
-                // GUI Inputs
-                for (const auto& entity : m_entities)
-                {
-                    auto gui = entity->getComponent<GUI>();
-                    if (gui)
-                    {
-                        entity->getInput()->HandleGUIInput(event, gui);
-                    }
-                }
             }
 
             for (size_t ei = 0; ei < m_entities.size(); ei++)

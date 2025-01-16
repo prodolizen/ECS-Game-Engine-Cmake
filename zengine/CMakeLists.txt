@@ -6,6 +6,10 @@ add_definitions(-DSDL_MAIN_HANDLED)
 include_directories(
   src
   contrib/include
+  contrib/include/SDL2   
+  contrib/include/AL     
+  contrib/include/GL     
+  contrib/include/SDL2_TTF  
 )
 
 link_directories(
@@ -52,7 +56,7 @@ add_library(zengine
 )
 
 target_link_libraries(
-	zengine rend
+  zengine rend
 )
 
 add_library(rend
@@ -70,8 +74,7 @@ add_library(rend
   src/rend/rendmath.cpp
   src/rend/utils.cpp
 )
-target_link_libraries(rend SDL2 GLEW32 OpenGL32 openal32)
-
+target_link_libraries(rend SDL2 GLEW32 OpenGL32 openal32 SDL2_ttf)
 
 # Add game executable
 add_executable(game
@@ -83,4 +86,3 @@ target_link_libraries(game zengine)
 
 # Set startup project
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT game)
-

@@ -155,8 +155,6 @@ namespace zengine
             default:
                 break;
             }
-
-            std::cout << m_rotation.y << std::endl;
         }
         return m_rotation;
     }
@@ -172,26 +170,4 @@ namespace zengine
     {
 		m_rotation = rotation;
     };
-
-    void Input::HandleGUIInput(const SDL_Event& evt, std::shared_ptr<GUI> gui)
-    {
-        static bool mousePressed = false;
-
-        if (evt.type == SDL_MOUSEMOTION || evt.type == SDL_MOUSEBUTTONDOWN || evt.type == SDL_MOUSEBUTTONUP)
-        {
-            int mouseX, mouseY;
-            SDL_GetMouseState(&mouseX, &mouseY);
-
-            if (evt.type == SDL_MOUSEBUTTONDOWN && evt.button.button == SDL_BUTTON_LEFT)
-            {
-                mousePressed = true;
-            }
-            else if (evt.type == SDL_MOUSEBUTTONUP && evt.button.button == SDL_BUTTON_LEFT)
-            {
-                mousePressed = false;
-            }
-
-            gui->updateElementStates(mouseX, mouseY, mousePressed);
-        }
-    }
 }

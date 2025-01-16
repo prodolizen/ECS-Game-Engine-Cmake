@@ -23,8 +23,7 @@ int main()
 
     // GUI for player entity
     std::shared_ptr<GUI> catGUI = cat->addComponent<GUI>();
-    catGUI->addElement(GUIElement(glm::vec2(100, 100), glm::vec2(200, 50), glm::vec4(1.0f, 0.0f, 0.0f, 1.0f), "Button1"));
-    catGUI->addElement(GUIElement(glm::vec2(100, 200), glm::vec2(200, 50), glm::vec4(0.2f, 0.5f, 0.8f, 1.0f), "Button2"));
+    catGUI->addElement(GUIElement(glm::vec2(-1, 0.8f), glm::vec2(0.6f, 0.25f), glm::vec4(1.0f, 0.0f, 0.0f, 1.0f), "PlayerScore"));
 
     // Skull entity
     std::shared_ptr<Entity> skull = core->addEntity();

@@ -14,8 +14,6 @@ namespace zengine
         void RecievePosition(glm::vec3 position);
         void RecieveRotation(glm::vec3 rotation);
 
-        void HandleGUIInput(const SDL_Event& evt, std::shared_ptr<GUI> gui);
-
     private:
         glm::vec3 m_position{ 0,-1,-2 };
         glm::vec3 m_rotation;

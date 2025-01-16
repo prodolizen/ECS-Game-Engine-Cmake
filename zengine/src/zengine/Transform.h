@@ -22,7 +22,5 @@ namespace zengine
 		glm::vec3 m_position;
 		glm::vec3 m_rotation;
 		glm::vec3 m_scale;
-		glm::vec3 m_axis = glm::vec3{ 0,1,0 };
-		float m_angle = 3.0f;
 	};
 }
