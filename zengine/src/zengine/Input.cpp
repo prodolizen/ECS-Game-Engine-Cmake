@@ -138,24 +138,59 @@ namespace zengine
             {
             case SDLK_w:
                 m_rotation.y = 40.7999f;
+				m_rotation.x = 0.0f;
                 break;
 
             case SDLK_a:
                 m_rotation.y = -90.0f;
+				m_rotation.x = 0.0f;
                 break;
 
             case SDLK_s:
                 m_rotation.y = 0.0f;
+				m_rotation.x = 0.0f;
                 break;
 
             case SDLK_d:
                 m_rotation.y = 90.0f;
+				m_rotation.x = 0.0f;
                 break;
 
             default:
                 break;
             }
         }
+
+
+        //mouse rotation of cat
+        static int prevX = 0, prevY = 0; 
+        static bool isLeftMouseDown = false;
+        // Get the current mouse position
+        int mouseX, mouseY;
+        SDL_GetMouseState(&mouseX, &mouseY);
+
+        if (evt.type == SDL_MOUSEBUTTONDOWN && evt.button.button == SDL_BUTTON_LEFT) 
+        {
+            isLeftMouseDown = true;  
+        }
+        else if (evt.type == SDL_MOUSEBUTTONUP && evt.button.button == SDL_BUTTON_LEFT) 
+        {
+            isLeftMouseDown = false;  
+        }
+
+        if (isLeftMouseDown) 
+        {
+            int deltaX = mouseX - prevX;
+			int deltaY = mouseY - prevY;
+
+            m_rotation.y += deltaX * mouseSensitivity; 
+			m_rotation.x += deltaY * mouseSensitivity;
+
+            prevX = mouseX;
+            prevY = mouseY;
+        }
+
+
         return m_rotation;
     }
 

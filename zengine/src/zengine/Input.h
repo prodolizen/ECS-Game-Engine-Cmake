@@ -18,5 +18,6 @@ namespace zengine
         glm::vec3 m_position{ 0,-1,-2 };
         glm::vec3 m_rotation;
         friend struct zengine::Transform;
+		float mouseSensitivity = 0.1f;
     };
 }
