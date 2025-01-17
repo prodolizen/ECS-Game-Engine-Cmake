@@ -4,7 +4,7 @@
 
 namespace zengine
 {
-    Window::Window(const std::string& title, int width, int height, bool resizable)
+    Window::Window(const std::string& title, int width, int height, bool resizable) //constructor to generate a new SDL window
         : m_window(nullptr), m_glContext(nullptr), m_width(width), m_height(height)
     {
         Uint32 flags = SDL_WINDOW_OPENGL | (resizable ? SDL_WINDOW_RESIZABLE : 0);
@@ -16,23 +16,23 @@ namespace zengine
         }
 
         m_glContext = SDL_GL_CreateContext(m_window);
-        if (!m_glContext)
+		if (!m_glContext) //error checking for OpenGL context
         {
             SDL_DestroyWindow(m_window);
             throw std::runtime_error("Failed to create OpenGL context: " + std::string(SDL_GetError()));
         }
 
-        if (glewInit() != GLEW_OK)
+		if (glewInit() != GLEW_OK) //error checking for GLEW
         {
             SDL_GL_DeleteContext(m_glContext);
             SDL_DestroyWindow(m_window);
             throw std::runtime_error("Failed to initialize GLEW");
         }
 
-        SDL_GL_SetSwapInterval(1);
+        SDL_GL_SetSwapInterval(1); 
     }
 
-    Window::~Window()
+	Window::~Window() //destructor to delete the window and context
     {
         if (m_glContext)
         {
@@ -49,7 +49,7 @@ namespace zengine
         SDL_GL_SwapWindow(m_window);
     }
 
-    SDL_Window* Window::getSDLWindow() const
+    SDL_Window* Window::getWindow() const
     {
         return m_window;
     }

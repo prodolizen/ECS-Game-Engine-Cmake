@@ -5,6 +5,7 @@
 
 namespace zengine
 {
+	//initialize everything needed for the audio class aswell as error checking
 	void Audio::onInitialize()
 	{
 		device = alcOpenDevice(NULL);
@@ -36,6 +37,7 @@ namespace zengine
 	{
 
 	}
+	//take a path to a sound  file and play it
 	void Audio::playSound(const std::string& _path, bool loop)
 	{
 		ALenum format = 0; 

@@ -11,7 +11,7 @@ namespace zengine
         ~Window();
 
         void swapBuffers();
-        SDL_Window* getSDLWindow() const;
+        SDL_Window* getWindow() const;
         int getWidth() const;
         int getHeight() const;
 

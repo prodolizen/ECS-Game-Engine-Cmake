@@ -33,8 +33,10 @@ namespace zengine
 		m_scale = scale;
 	}
 
-	glm::mat4 Transform::model()
+	glm::mat4 Transform::getModel()
 	{
+		//calculate the model matrix using the position and rotation of the model
+		//this is then passed to the renderer class 
 		glm::mat4 rtn(1.0f);
 		rtn = glm::translate(rtn, m_position);
 		rtn = glm::scale(rtn, m_scale);

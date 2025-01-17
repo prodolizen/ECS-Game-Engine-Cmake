@@ -10,7 +10,7 @@ namespace zengine
 			std::cerr << "TTF Init failed" << std::endl;
 
         //load font used for the UI
-		font = TTF_OpenFont("../assets/fonts/arial.ttf", 24);
+		m_font = TTF_OpenFont("../assets/fonts/arial.ttf", 24);
 
         //got the font from here:
         //https://www.quantumenterprises.co.uk/handwriting-fonts/fontvault.htm
@@ -27,7 +27,7 @@ namespace zengine
 		glEnable(GL_BLEND); //allows for a bit of transparency with the UI element
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-        for (const auto& element : elements)
+        for (const auto& element : m_elements)
         {
             renderElement(element);
         }
@@ -37,23 +37,23 @@ namespace zengine
 
     void GUI::addElement(const GUIElement& element)
     {
-        elements.push_back(element); //add GUI element 
+        m_elements.push_back(element); //add GUI element 
     }
 
     void GUI::renderElement(const GUIElement& element)
     {
         glBegin(GL_QUADS);
-        glColor4f(element.color.r, element.color.g, element.color.b, element.color.a);
-        glVertex2f(element.position.x, element.position.y);
-        glVertex2f(element.position.x + element.size.x, element.position.y);
-        glVertex2f(element.position.x + element.size.x, element.position.y + element.size.y);
-        glVertex2f(element.position.x, element.position.y + element.size.y);
+        glColor4f(element.m_colour.r, element.m_colour.g, element.m_colour.b, element.m_colour.a);
+        glVertex2f(element.m_position.x, element.m_position.y);
+        glVertex2f(element.m_position.x + element.m_size.x, element.m_position.y);
+        glVertex2f(element.m_position.x + element.m_size.x, element.m_position.y + element.m_size.y);
+        glVertex2f(element.m_position.x, element.m_position.y + element.m_size.y);
         glEnd();
 
         //render the text, is there is any...
-        if (!element.text.empty())
+        if (!element.m_text.empty())
         {
-            renderText(element.text, element.position.x, element.position.y);
+            renderText(element.m_text, element.m_position.x, element.m_position.y);
         }
     }
 
@@ -62,10 +62,10 @@ namespace zengine
     //rendering text with openGL and SDL_TTF (doesnt work :( )
 	void GUI::renderText(const std::string& text, float x, float y)
 	{
-        if (!font) return;
+        if (!m_font) return;
 
 		SDL_Color textCol = { 255, 255, 255, 255 };
-		SDL_Surface* surface = TTF_RenderText_Blended(font, text.c_str(), textCol);
+		SDL_Surface* surface = TTF_RenderText_Blended(m_font, text.c_str(), textCol);
 
         GLuint tex;
 		glGenTextures(1, &tex);
@@ -92,7 +92,7 @@ namespace zengine
 
 	GUI::~GUI()
 	{
-		TTF_CloseFont(font);
+		TTF_CloseFont(m_font);
 		TTF_Quit();
 	}
 }

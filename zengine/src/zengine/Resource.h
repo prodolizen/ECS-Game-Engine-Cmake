@@ -6,7 +6,7 @@
 
 namespace zengine{	struct Resources;	struct Resource
 	{
-		virtual void onLoad() = 0;
+		virtual void onLoad() = 0; //virtual void used by model and texture classes
 		std::string getPath() const
 		{
 			//std::cout << "Resource Path: " << m_path << std::endl;

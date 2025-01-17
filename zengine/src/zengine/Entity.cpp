@@ -7,7 +7,7 @@ namespace zengine
 	{
 		for (size_t ci = 0; ci < m_components.size(); ++ci)
 		{
-			m_components.at(ci)->tick();
+			m_components.at(ci)->tick(); //run the tick function for each component attatched to the entity
 		}
 	}
 
@@ -15,7 +15,7 @@ namespace zengine
 	{
 		for (size_t ci = 0; ci < m_components.size(); ++ci)
 		{
-			m_components.at(ci)->display();
+			m_components.at(ci)->display(); //run the display function for each component attatched to the entity
 		}
 	}
 
@@ -25,7 +25,7 @@ namespace zengine
 		m_alive = false;
 		for (size_t ci = 0; ci < m_components.size(); ++ci)
 		{
-			m_components.at(ci)->kill();
+			m_components.at(ci)->kill(); //run the kill function for each component attatched to the entity
 		}
 	}
 

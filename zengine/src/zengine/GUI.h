@@ -14,14 +14,14 @@ namespace zengine
 {
     struct GUIElement
     {
-        glm::vec2 position;
-        glm::vec2 size;
-        glm::vec4 color;
-        std::string label;
-        std::string text;
+        glm::vec2 m_position;
+        glm::vec2 m_size;
+        glm::vec4 m_colour;
+        std::string m_name;
+        std::string m_text;
 
-		GUIElement(glm::vec2 pos, glm::vec2 sz, glm::vec4 col, const std::string& lbl, const std::string& txt = "") //inline function to define all necessary variables for a GUI element
-            : position(pos), size(sz), color(col), label(lbl), text(txt) {}
+		GUIElement(glm::vec2 pos, glm::vec2 sz, glm::vec4 col, const std::string& name, const std::string& txt = "") //inline function to define all necessary variables for a GUI element
+            : m_position(pos), m_size(sz), m_colour(col), m_name(name), m_text(txt) {}
     };
 
     struct GUI : Component
@@ -34,8 +34,8 @@ namespace zengine
         ~GUI();
 
     private:
-        std::vector<GUIElement> elements;
-		TTF_Font* font = nullptr;
+        std::vector<GUIElement> m_elements;
+		TTF_Font* m_font = nullptr;
         void renderElement(const GUIElement& element);
        void renderText(const std::string& text, float x, float y);
 

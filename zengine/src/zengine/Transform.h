@@ -14,7 +14,7 @@ namespace zengine
 		void setRotation(glm::vec3 rotation);
 		void setScale(glm::vec3 scale);
 
-		glm::mat4 model();
+		glm::mat4 getModel();
 
 		void onInitialize();
 

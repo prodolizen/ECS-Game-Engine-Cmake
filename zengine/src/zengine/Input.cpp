@@ -102,6 +102,7 @@ namespace zengine
         glm::vec3 left(-1.0f, 0.0f, 0.0f);     
         glm::vec3 right(1.0f, 0.0f, 0.0f);     
 
+		//register key inputs and adjust entity position accordingly 
         if (evt.type == SDL_KEYDOWN)
         {
             switch (evt.key.keysym.sym)
@@ -132,6 +133,7 @@ namespace zengine
     glm::vec3 Input::Rotation(const SDL_Event& evt)
     {
         // set rotation of model to direction of movement
+        // we can also rotate the entity with the mouse
         if (evt.type == SDL_KEYDOWN)
         {
             switch (evt.key.keysym.sym)

@@ -59,8 +59,6 @@ namespace zengine
 				return false;
 			}
 		}
-		// TODO: y
-		// TODO: z
 
 		return true;
 	}
@@ -91,6 +89,7 @@ namespace zengine
 
 					if (m_colliders.at(i)->getEntity()->getComponent<Player>()) //if collider hitting j is the player
 					{
+						//calculate a random position with in a range for the respawn of the skull
 						Maths maths;
 						float x = maths.getRandomFloat(-5, 5);
 						float y = 0;
@@ -100,6 +99,7 @@ namespace zengine
 						player->increaseScore(1); //increase score by 1
 						m_colliders.at(j)->getEntity()->getComponent<Audio>()->playSound("../assets/sounds/slash.ogg", false);
 						
+						//once the player reaches the max score, we kill the skull rather than respawning it 
 						if (player->getScore() == 9)
 							m_colliders.at(j)->getEntity()->kill();
 						else
